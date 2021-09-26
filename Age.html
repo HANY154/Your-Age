@@ -1,0 +1,386 @@
+ <!DOCTYPE html>
+<html>
+<head><title>CulcAge</title>
+<meta charset="utf-8"/>	
+<style>
+
+	body
+	{
+		
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;	
+		background: #22a6b3;
+		-webkit-user-select:none;
+		-moz-user-select:none;
+		-o-user-select:none;
+
+	}
+	img
+	{
+	position: relative;	
+	width: 80%;
+	height: 35%;	
+	margin: 10px auto;
+    left: 100px;
+	pointer-events: none;
+	}
+	
+	#contaner
+	{
+	width: 70%;
+	margin: 0 auto;
+	height: 100%;
+	
+	}
+		#parth_day 
+	{
+  border: none;
+	    width: 100%;
+		height: 200px;
+	
+	    margin: 10px;
+		font-size: 30px
+	}
+	#parth_day select
+	{
+	   width: 120px;
+		height: 50px;
+		float: left;
+		position: relative;
+	    margin: 0 10px 200px;
+	    flex: none;
+		font-size: 25px;
+	   left: 50px;
+	    top:10px ;
+	   text-align: center;
+	
+	}
+		#parth_day h3
+	{
+		font-style: oblique;
+		top: -10px;
+		right: 120px;	
+		float: right;
+		position: relative;
+	    margin-right: 10px;
+	    flex: none;
+		font-size: 30px;
+		font-family:inherit ;
+		
+	}
+
+	#zar{
+	margin-top:10px ;
+	height: auto;
+	margin-bottom: 50px;	
+	align-content: center;
+		align-items: center;
+		align-self: center;
+	}
+	#zar button{
+	color: black;
+	border-radius: 15px;	
+	width: 200px;
+	height: 60px;
+	text-align: center;
+	background: #4CAf50;
+	font-size: 30px;
+	margin: 10px auto;
+    position: relative;
+	left: -100px;
+	border: none;
+	box-shadow: 1px 6px 20px -2px black;
+	}
+	#btn:hover{
+	color: black;
+	background-color: #4CAf50;
+	position: relative;
+	cursor: pointer;
+    	
+	box-shadow: none;
+    box-shadow:  0 5px #999 trasition-duration:0.5s;
+
+	}
+	#btn:active{
+	 position: relative;
+	 background-color: #666;
+     box-shadow: 0 0px #666;
+	 cursor: pointer;
+	 transform: translateY(4px);
+	
+	}
+	
+	#result{
+	width: 100%;
+	height: 100px;
+	position: relative;	
+	text-align: center;
+	margin: 0px;
+	}
+	#result h2{
+    display: inline-block;
+    margin: 15px 50px;	
+
+	}
+	#tall-weigh{
+	width: 100%;
+   height: 150px;
+  font-size: 20px;
+text-align: right;
+	
+	}
+	#tall-weigh h2{
+	text-align: right;
+	margin: 50px 10px;
+	display: block;	
+	position: relative;
+	right: 5px;
+	text-align: justify;
+	float: right;
+	}
+	#tall-weigh h3{
+		visibility: visible;
+	top:30px;	
+	position: relative;
+	text-align: right;
+	margin: 20px 10px;
+	display: block;	
+	color: red;
+	right:0px;
+    background: #f9f8f8;
+    width: 100;
+    height: 45px;
+    float: right;
+    text-align: center;
+	}
+#hp {
+	text-align: right;
+	
+	}
+	
+	
+	#hp h1{
+	float: right;
+	color: firebrick;
+	text-decoration: underline;
+	}
+	#hp p{
+	float: right;
+	font-size: 30px;
+	}
+	
+</style>
+	
+	
+	
+	
+	</head>
+<body>
+	<img src="68.png"/>
+	<div id="contaner">
+	
+	<div id="parth_day">
+
+		<h3>ادخل تاريخ ميلادك</h3>
+			
+	<select id="sYear">
+		<option>السنه</option>
+		</select>	
+	<select id="sMonth">
+		<option>الشهر</option>
+		</select>	
+	<select id="sDay">
+		<option>اليوم</option>
+		</select>
+		
+		</div>
+		
+		
+<!--
+	    <div id="to-day">
+		<h2>التاريخ الحالي</h2>
+		<input id="year"type="text" value=""/>
+		<input id="month"type="text" value=""/>
+		<input id="day"type="text" value=""/>
+		</div>
+-->
+	
+	<div id="zar">
+	<button onclick="calcu();" id="btn">احسب</button></div>
+	
+	<div id="result">
+		<h2>يوم</h2>
+		<h2>شهر</h2>
+		<h2>سنه</h2>
+		
+		
+		<br>
+		
+<h2 id="rDay">\</h2>
+<h2 id="rMonth">\</h2>
+<h2 id="rYear">\</h2>
+
+
+		</div>
+		
+	<div id="tall-weigh">
+	<h2>:الطول المثالي</h2> <h3 id="tall">سم</h3>
+	<h2>:الوزن المثالي</h2> <h3 id="weigh">ك</h3>
+		
+	</div>
+		<div id="hp">
+		<h1 id="h"></h1>
+		<p id="p"></p>
+		
+		</div>
+	</div>
+	
+	
+	<script>
+
+ 
+for(i=1920 ; i<=2020; i++){
+document.getElementById('sYear').innerHTML+="<option>"+i+"</option>";
+}	
+
+
+			
+for(i=1 ; i<=31; i++){
+document.getElementById('sDay').innerHTML+="<option>"+i+"</option>";
+}			
+		
+
+	var toDay = new Date();		
+var d = toDay.getDate();
+var m = toDay.getMonth()+1;
+var y = toDay.getFullYear();
+	//
+var str =toDay.toLocaleDateString("en",{month:"numeric"});
+	console.log(str);
+	//	
+		var mAr = [];
+for (x = 0 ; x < 12 ; x++){
+	
+var myD = new Date(2020,x);
+	var str = myD.toLocaleDateString("ar",{month:"numeric"});
+mAr.push(str);
+}
+for (i=0 ; i < mAr.length ; i++){
+	console.log(mAr[i]);
+	document.getElementById('sMonth').innerHTML+="<option>"+mAr[i]+"</option>";
+}
+
+		
+	
+function calcu() {
+	
+	var pYear = document.getElementById('sYear').value,
+		pMonth = document.getElementById('sMonth').value,
+		pDay = document.getElementById('sDay').value;
+
+var r1 = y - pYear,
+    r2 = m - pMonth,
+    r3 = d - pDay;
+	
+	
+window.rYear.innerHTML=r1;
+window.rMonth.innerHTML=r2;
+window.rDay.innerHTML=r3;
+
+	//-------------month-----------------//
+	
+	if(r2 <= 0){
+r1 = r1 - 1;	
+var rtow=12 + r2;
+window.rMonth.innerHTML=rtow;
+window.rYear.innerHTML=r1;
+	}
+				//--------------day------------------//
+	var rThree = 30;
+	if(r3 <= 0){
+rtow = r2 - 1;
+ rThree + r3;				
+window.rDay.innerHTML=rThree;
+window.rMonth.innerHTML=rtow;	
+	
+	}
+
+if(pMonth=="12" && pDay >="22" || pMonth=="1" && pDay <="19"){
+	window.h.innerHTML="برج الجدي";
+  window.p.innerHTML="عمليّ، وعقلانيّ، وصاحب روح مرحة، يتّسم بالصبر، ومنظّم على الصّعيد الاجتماعيّ، وبطيء في علاقاته الاجتماعيّة.";
+	}
+else if(pMonth=="1" && pDay >="20" || pMonth=="2" && pDay <="18"){
+	window.h.innerHTML="برج الدّلو";
+  window.p.innerHTML="ودود، ومبتكر، وصادق، ويتميّز بالأصالة والمثاليّة، وهو عاشق وميّال للمرح، وفي العاطفة يحاول أن يقدّم الكثير لإرضاء شريكه ممّا يجعل شخصيته جذّابة.";
+	}
+	
+else if(pMonth==="2" && pDay >="19" || pMonth==="3" && pDay <="20"){
+	window.h.innerHTML="برج الحوت";
+  window.p.innerHTML="حسّاس وعاطفيّ، لا تهمّه ماديّات الحياة، كما أنّه غير أنانيّ، وفي العاطفة يحتاج بأن يشعر بأن الآخرين بحاجة له.";
+	}
+else if(pMonth==="3" && pDay >="21" || pMonth==="4" && pDay <="19"){
+	window.h.innerHTML="برج الحمل";	
+	window.p.innerHTML="السّرعة في البديهة، والثّقة العالية بالنّفس، والشّجاعة، وحبّ المغامرة، ومن النّاحية العاطفية فهم أشخاص ذوو حماس واندفاع في الحبّ، ويسعون دوماً إلى الاستقرار والتّميز في الحبّ.";
+	}
+else if(pMonth==="4" && pDay >="20" || pMonth==="5" && pDay <="20"){
+	window.h.innerHTML="برج الثور";
+  window.p.innerHTML="الإصرار والعزيمة، ويُعتمد عليه كثيراً، وعاطفيّ من الدّرجة الأولى، ومخلص كثيراً، ويفضّل أيضاً العلاقات طويلة المدى";
+	}
+else if(pMonth==="5" && pDay >="21" || pMonth==="6" && pDay <="20"){
+	window.h.innerHTML="برج الجوزاء";
+  window.p.innerHTML="ذكيّ، وموهوب، واجتماعي، ومغامر، ولديه رغبة في مناقشة التّفاصيل الحياتيّة، وصبور.";
+	}
+else if(pMonth==="6" && pDay >="21" || pMonth==="7" && pDay <="22"){
+	window.h.innerHTML="برج السرطان";
+  window.p.innerHTML="يتسم بالخيال الواسع، كما أنّه عاطفيّ، ويضع البيت والأسرة في سلّم أولويّاته، كما أنّه حسّاس كثيراً في حال تمّ تجاهله، وغالباً ما يترك مشاكله الخاصّة ليساعد الآخرين على حلّ مشاكلهم، واجتماعي.";
+	}
+else if(pMonth==="7" && pDay >="23" || pMonth==="8" && pDay <="22"){
+	window.h.innerHTML="برج الاسد";
+  window.p.innerHTML="الإبداع، والكرم، وسعة العقل، كما أنه مليء بالدفء والتّفاؤل، ولا يخاف، وذو طاقة كبيرة في الإنجاز.";
+	}
+else if(pMonth==="8" && pDay >="23" || pMonth==="9" && pDay <="22"){
+	window.h.innerHTML="برج العذراء";
+  window.p.innerHTML="عمليّ، ومجتهد، وذكيّ، ومتواضع، وخجول، ويمكن الاعتماد عليه، ويتكيّف بسهولة، ويحب الاستقرار والتّنظيم في حياته.";
+	}
+else if(pMonth==="9" && pDay >="23" || pMonth==="10" && pDay <="23"){
+	window.h.innerHTML="برج الميزان";
+  window.p.innerHTML="رومانسيّ، وساحر، ودبلوماسيّ في التّعامل، ومؤدّب، وله مبادئ ومسلمات وهي البيت والزّواج، كما أنه محبوب.";
+	}
+else if(pMonth==="10" && pDay >="24" || pMonth==="11" && pDay <="21"){
+	window.h.innerHTML="برج العقرب";
+  window.p.innerHTML="العاطفيّة، والقوّة، والإثارة، وله شخصيّة جذّابة، وذو عزيمة، ويكتم الأسرار.";
+	}
+else if(pMonth==="11" && pDay >="22" || pMonth==="12" && pDay <="21"){
+	window.h.innerHTML="برج القوس";
+  window.p.innerHTML="فيه روح المرح الجميلة، والتّفاؤل، وحبّ الحرية، والمرح، والصّدق، والذّكاء من بين كل الأبراج، ولا يخاف من خوض المغامرات.";
+	}
+	
+
+	
+	
+	
+	
+	if(r1 >=20 && r1 <=25){
+	window.tall.innerHTML=' 163 ';
+	window.weigh.innerHTML='70 ';
+	}
+
+
+}
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>
