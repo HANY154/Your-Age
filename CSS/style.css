@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #22a6b3;
+  user-select: none;
+}
+img {
+  position: relative;
+  width: 59%;
+  height: 24%;
+  margin: -31px auto;
+  pointer-events: none;
+  display: block;
+}
+
+#contaner {
+  width: 70%;
+  margin: 0 auto;
+  height: 100%;
+}
+#parth_day {
+  border: none;
+  width: 100%;
+  height: 200px;
+
+  margin: 10px;
+  font-size: 30px;
+}
+#parth_day select {
+  width: 120px;
+  height: 50px;
+  float: left;
+  position: relative;
+  margin: 0 10px 200px;
+  flex: none;
+  font-size: 25px;
+  left: 50px;
+  top: 10px;
+  text-align: center;
+}
+#parth_day h3 {
+  font-style: oblique;
+  top: -10px;
+  right: 120px;
+  float: right;
+  position: relative;
+  margin-right: 10px;
+  flex: none;
+  font-size: 30px;
+  font-family: inherit;
+}
+
+#zar {
+  margin-top: 10px;
+  height: auto;
+  margin-bottom: 50px;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+}
+#zar button {
+  color: black;
+  border-radius: 15px;
+  width: 200px;
+  height: 60px;
+  text-align: center;
+  background: #4caf50;
+  font-size: 30px;
+  margin: 10px auto;
+  position: relative;
+  left: -100px;
+  border: none;
+  box-shadow: 1px 6px 20px -2px black;
+}
+#btn:hover {
+  color: black;
+  background-color: #4caf50;
+  position: relative;
+  cursor: pointer;
+
+  box-shadow: none;
+  box-shadow: 0 5px #999;
+  transition-duration: 0.5s;
+}
+#btn:active {
+  position: relative;
+  background-color: #666;
+  box-shadow: 0 0px #666;
+  cursor: pointer;
+  transform: translateY(4px);
+}
+
+#result {
+  width: 100%;
+  height: 100px;
+  position: relative;
+  text-align: center;
+  margin: 0px;
+}
+#result h2 {
+  display: inline-block;
+  margin: 15px 50px;
+}
+#tall-weigh {
+  width: 100%;
+  height: 150px;
+  font-size: 20px;
+  text-align: right;
+}
+#tall-weigh h2 {
+  text-align: right;
+  margin: 50px 10px;
+  display: block;
+  position: relative;
+  right: 5px;
+  text-align: justify;
+  float: right;
+}
+#tall-weigh h3 {
+  visibility: visible;
+  top: 30px;
+  position: relative;
+  text-align: right;
+  margin: 20px 10px;
+  display: block;
+  color: red;
+  right: 0px;
+  background: #f9f8f8;
+  width: 100;
+  height: 45px;
+  float: right;
+  text-align: center;
+}
+#hp {
+  text-align: right;
+}
+
+#hp h1 {
+  float: right;
+  color: firebrick;
+  text-decoration: underline;
+}
+#hp p {
+  float: right;
+  font-size: 30px;
+}
